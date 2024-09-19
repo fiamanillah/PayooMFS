@@ -86,7 +86,11 @@ function moneyWithdraw(){
     let ammountToWithdraw = document.getElementById("ammountToWithdraw").value;
     let outPIN = document.getElementById("outPIN");
     if (outPIN.value == 1234) {
-        let numAccountBalance = parseInt(accountBalance.innerText);
+
+        if (ammountToWithdraw > parseInt(accountBalance.innerText)) {
+            alert("Low Balance")
+        } else {
+            let numAccountBalance = parseInt(accountBalance.innerText);
 
         let newBalance = numAccountBalance - ammountToWithdraw;
 
@@ -105,6 +109,9 @@ function moneyWithdraw(){
         transactionHistorySection.insertBefore(transactionElement, transactionHistorySection.firstChild);
 
         localStorage.setItem("transactionStorage" , transactionHistorySection.innerHTML);
+        }
+
+        
 
     }else{
         alert("Wrong Pin")

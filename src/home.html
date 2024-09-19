@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payooo</title>
+
+    <link rel="shortcut icon" href="./image/payoo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body>
+    <div class="max-w-lg bg-slate-50 border-4 h-[100vh] mx-auto flex flex-col">
+        <header class="p-3 flex justify-between items-center">
+            <div class="flex gap-2">
+                <img class="w-14" src="./image/payoo.png" alt="" srcset="">
+                <div>
+                    <h1 class="text-2xl font-medium">$<span id="balance"></span></h1>
+                    <span class="text-slate-500">Available Balance</span>
+                </div>
+            </div>
+            <div>
+                <button class="font-medium text-slate-500 flex gap-2 items-center p-2 border-2 border-slate-400 rounded-xl"> <img src="./image/logout.svg" alt="" srcset="">Log Out</button>
+            </div>
+        </header>
+
+        
+        <hr class="w-full h-[2px] bg-slate-300">
+
+        <div class="p-3">
+            <h1 class="text-3xl font-bold py-2">🔥 Welcome to Payooo!</h1>
+            <p class="text-slate-500">Enjoy easy and convenient financial services with us. <br> Cashout charge is low and</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 p-3 rounded-b-xl">
+            <div class="btn-normal action-Btn" id="addMoney">
+                <img src="./image/addmoney.svg" alt="" srcset="">
+                <span class="font-medium ">Add Money</span>
+            </div>
+
+            <div class="btn-normal action-Btn" id="cashOut">
+                <img src="./image/cashout.svg" alt="" srcset="">
+                <span class="font-medium ">Cashout</span>
+            </div>
+
+            <div class="btn-normal action-Btn" id="transferMoney">
+                <img src="./image/transfer.svg" alt="" srcset="">
+                <span class="font-medium  tracking-tighter	">Transfer Money</span>
+            </div>
+
+            <div class="btn-normal action-Btn" id="getBonus">
+                <img src="./image/bonus.svg" alt="" srcset="">
+                <span class="font-medium ">Get Bonus</span>
+            </div>
+
+            <div class="btn-normal action-Btn" id="payBill">
+                <img src="./image/pay.svg" alt="" srcset="">
+                <span class="font-medium ">Pay Bill</span>
+            </div>
+
+            
+
+            <div class="btn-normal action-Btn" id="transaction">
+                <img src="./image/transaction.svg" alt="" srcset="">
+                <span class="font-medium ">Transaction</span>
+            </div>
+            
+        </div>
+
+
+
+        <div class="bg-slate-200 p-3">
+
+
+            <div class="bg-white p-3 rounded-xl action-section action-sections flex-col gap-2" id="addMoneySection">
+                <h2 class="text-lg font-medium mb-3">Add Money</h2>
+
+                <label class="text-slate-600" for="bank">Select A Bank</label>
+                <select class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" name="bank" id="bank" >
+                    <option value="Select bank" disabled selected>Select Bank</option>
+                    <option value="Islami Bank">Islami Bank</option>
+                    <option value="UCB">UCB</option>
+                    <option value="Brac Bank">Brac Bank</option>
+                    <option value="Bank Asia">Bank Asia</option>
+                </select>
+
+                <label for="accountNumber">Bank Accound Number</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" name="bank" type="number" name="accountNumber" id="accountNumber" placeholder="Enter Account Number">
+
+                <label for="accountNumber">Ammount To Add</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" type="number" name="ammountToAdd" id="ammountToAdd" placeholder="Add Ammount">
+
+                <label for="password">Pin Number</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" type="password" name="password" id="addPIN" placeholder="Enter PIN">
+
+                <button class="w-full p-3 bg-blue-500 rounded-xl mt-4 font-medium text-xl" id="addMoneyBtn">Add Money</button>
+
+
+            </div>
+
+
+
+            <div class="bg-white p-3 rounded-xl flex-col gap-2 action-section action-sections " id="withdrawMoneySection">
+                <h2 class="text-lg font-medium mb-3">Cash Out</h2>
+
+                <label for="accountNumber">Agent Account Number</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" name="bank" type="number" name="accountNumber" id="agentAccountNumber" placeholder="Enter Account Number">
+
+                <label for="ammountToWithdraw">Ammount To Withdraw</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" type="number" name="ammountToWithdraw" id="ammountToWithdraw" placeholder="Withdraw Ammount">
+
+                <label for="password">Pin Number</label>
+                <input class="w-full p-3 text-slate-500 outline-none rounded-xl bg-slate-200" type="password" name="password" id="outPIN" placeholder="Enter PIN">
+
+                <button class="w-full p-3 bg-blue-500 rounded-xl mt-4 font-medium text-xl" id="withdrawMoneyBtn">Withdraw Money</button>
+
+
+            </div>
+
+
+
+            <div class="bg-white p-3 rounded-xl flex-col gap-2 action-section action-sections h-[50vh]" id="transactionSection">
+                <h2 class="text-lg font-medium mb-3">Transactions</h2>
+
+                <div class="flex flex-col gap-2 overflow-y-scroll" id="transactionHistorySection">
+                    <div class="flex items-center gap-3 w-full p-3 text-slate-500 rounded-xl bg-slate-200">
+                        <img src="./image/transaction.svg" alt="" srcset="">
+                        <span>$100 Added to the account</span>
+                    </div>
+    
+                    <div class="flex items-center gap-3 w-full p-3 text-slate-500 rounded-xl bg-slate-200">
+                        <img src="./image/transaction.svg" alt="" srcset="">
+                        <span>$100 Added to the account</span>
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    
+
+
+    <script src="./home.js"></script>
+</body>
+</html>

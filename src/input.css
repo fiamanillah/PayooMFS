@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-normal {
+        @apply border border-slate-400 rounded-xl p-5 flex flex-col justify-center items-center cursor-pointer text-slate-600;
+    }
+    .btn-active {
+        @apply border border-blue-500 rounded-xl p-5 flex flex-col justify-center items-center cursor-pointer text-blue-500;
+    }
+    .action-section {
+        @apply  hidden;
+    }
+    .action-section-active {
+        @apply flex;
+    }
+  }
